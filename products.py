@@ -30,7 +30,7 @@ class Product:
         self._activate = False
 
     def show(self):
-        print(f"{self._name}, Price: {self._price}, Quantity: {self._quantity} ")
+        return f"{self._name}, Price: {self._price}, Quantity: {self._quantity} "
 
     def buy(self, quantity) -> float:
         self.validate_quantity(quantity)
@@ -42,7 +42,7 @@ class Product:
             else:
                 self._quantity = self._quantity - quantity
         else:
-            raise ValueError("Not enough products available")
+            raise ValueError(f"Not enough products for '{self._name}' available")
         return total_price
 
     @staticmethod
